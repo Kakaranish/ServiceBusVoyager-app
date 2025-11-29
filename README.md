@@ -1,4 +1,8 @@
-# Service Bus Voyager
+# Service Bus Voyager 
+
+<p align="center">
+  <img src="./docs/app-logo.svg" alt="Service Bus Voyager Logo" width="100">
+</p>
 
 A lightweight, intuitive desktop application for exploring and managing Azure Service Bus. Built with Electron, .NET 9, and React, Service Bus Voyager provides a modern, responsive interface for developers working with Azure Service Bus queues, topics, and messages.
 
