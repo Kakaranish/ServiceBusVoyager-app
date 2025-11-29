@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Service Bus Voyager - Lightweight, intuitive desktop app for exploring and managing Azure Service Bus">
-    <title>Service Bus Voyager - Azure Service Bus Management Tool</title>
+    <meta name="description" content="Service Bus Voyager">
+    <title>Service Bus Voyager</title>
     <style>
         * {
             margin: 0;
@@ -13,14 +13,15 @@
         }
 
         :root {
-            --primary: #0078d4;
-            --primary-dark: #106ebe;
+            --primary: #DEAE56;
+            --primary-dark: #c99940;
+            --primary-light: #f0d084;
             --text: #323130;
             --text-light: #605e5c;
             --bg: #ffffff;
-            --bg-alt: #f3f2f1;
+            --bg-alt: #f9f7f4;
             --border: #edebe9;
-            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow: rgba(222, 174, 86, 0.2);
         }
 
         body {
@@ -288,6 +289,7 @@
 <body>
     <header>
         <div class="container">
+            <img src="./app-logo.svg" alt="Service Bus Voyager Logo" style="width: 120px; height: 120px; margin-bottom: 30px;">
             <h1>Service Bus Voyager</h1>
             <p>Lightweight, intuitive desktop app for exploring and managing Azure Service Bus — built with a modern, responsive UI and designed to feel fast and simple.</p>
             <div class="cta-buttons">
@@ -305,24 +307,10 @@
             
             <div class="highlights-list">
                 <div class="highlight-item">
-                    <div class="highlight-icon">💡</div>
+                    <div class="highlight-icon">🎉</div>
                     <div class="highlight-text">
-                        <h4>Lightweight</h4>
-                        <p>Minimal footprint, quick startup, responsive interactions</p>
-                    </div>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-icon">🎯</div>
-                    <div class="highlight-text">
-                        <h4>Intuitive</h4>
-                        <p>Clean flows and sensible defaults, focused on productivity</p>
-                    </div>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-icon">🎨</div>
-                    <div class="highlight-text">
-                        <h4>Modern UI</h4>
-                        <p>React + Mantine, keyboard-friendly, dark-mode ready</p>
+                        <h4>100% FREE FOREVER</h4>
+                        <p>For individual developers and small companies — no hidden costs, no subscriptions, no paywalls</p>
                     </div>
                 </div>
                 <div class="highlight-item">
@@ -330,6 +318,20 @@
                     <div class="highlight-text">
                         <h4>Cross-platform</h4>
                         <p>Windows, macOS, and Linux builds</p>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">💡</div>
+                    <div class="highlight-text">
+                        <h4>Lightweight</h4>
+                        <p>Minimal footprint, quick startup, responsive interactions</p>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🎨</div>
+                    <div class="highlight-text">
+                        <h4>Modern UI</h4>
+                        <p>React + Mantine, keyboard-friendly, dark-mode ready</p>
                     </div>
                 </div>
                 <div class="highlight-item">
@@ -351,8 +353,23 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">📨</div>
-                    <h3>Message Browsing</h3>
-                    <p>Peek, view details, and preview message payloads with support for JSON and text formats.</p>
+                    <h3>Message Management</h3>
+                    <p>Browse, view, delete, and purge messages with support for JSON and text formats.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Send Messages</h3>
+                    <p>Create, import and send messages with custom properties and body content.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Filter & Search</h3>
+                    <p>Advanced filtering and searching capabilities for finding specific messages.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♻️</div>
+                    <h3>Resubmission</h3>
+                    <p>Resend messages to the same or different queues and topics.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📚</div>
@@ -360,34 +377,19 @@
                     <p>Connect to multiple Service Bus namespaces simultaneously and switch between them effortlessly.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
+                    <div class="feature-icon">📊</div>
                     <h3>Entity Overview</h3>
                     <p>View queues and topics with key runtime properties, including message counts and states.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🧹</div>
-                    <h3>Message Actions</h3>
-                    <p>Delete, purge, and cancel scheduled messages with intuitive controls.</p>
-                </div>
-                <div class="feature-card">
                     <div class="feature-icon">🔑</div>
-                    <h3>Safe Connections</h3>
+                    <h3>Secure Connections</h3>
                     <p>Store and manage saved connections securely using OS keychain integration.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔌</div>
-                    <h3>Health Check</h3>
-                    <p>Built-in backend health endpoint with connectivity feedback and monitoring.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
                     <h3>Robustness</h3>
                     <p>Auto-restart backend on crash, smart retry with exponential backoff.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🧭</div>
-                    <h3>Dev/Prod Parity</h3>
-                    <p>Development with localhost, production via secure app:// protocol.</p>
                 </div>
             </div>
         </div>
@@ -395,27 +397,12 @@
 
     <section class="tech-stack">
         <div class="container">
-            <h2>🛠️ Tech Stack</h2>
-            <p class="subtitle">Built with modern, reliable technologies</p>
-            
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <h4>Electron 39</h4>
-                    <p>Custom app:// protocol, secure, CORS-free in production</p>
-                </div>
-                <div class="tech-item">
-                    <h4>.NET 9 Backend</h4>
-                    <p>FastEndpoints, Serilog, Azure Service Bus SDK</p>
-                </div>
-                <div class="tech-item">
-                    <h4>React Frontend</h4>
-                    <p>Vite, TypeScript, Mantine UI</p>
-                </div>
-                <div class="tech-item">
-                    <h4>Secure Storage</h4>
-                    <p>OS keychain integration for credentials</p>
-                </div>
+            <h2>💰 Pricing</h2>
+            <div style="max-width: 700px; margin: 40px auto; padding: 30px; background: var(--bg-alt); border-radius: 12px; border: 2px solid var(--primary);">
+                <h3 style="color: var(--primary); margin-bottom: 15px; text-align: center;">Individual developers and small companies will always have free access!</h3>
+                <p style="text-align: center; color: var(--text-light);">Once the application exits beta and becomes production-ready, pricing for medium and large companies will be introduced.</p>
             </div>
+            <p class="subtitle">Service Bus Voyager is currently in <strong>beta</strong> and completely free for everyone</p>
         </div>
     </section>
 
@@ -424,8 +411,8 @@
             <h2>🚀 Ready to Get Started?</h2>
             <p>Download Service Bus Voyager and start managing your Azure Service Bus with ease</p>
             <div class="cta-buttons">
-                <a href="https://github.com/Kakaranish/ServiceBusVoyagerElectron/releases" class="btn btn-primary">Download Now</a>
-                <a href="https://github.com/Kakaranish/ServiceBusVoyagerElectron#readme" class="btn btn-secondary">Read Documentation</a>
+                <a href="https://github.com/Kakaranish/ServiceBusVoyager-app/releases" class="btn btn-primary">Download Now</a>
+                <a href="https://github.com/Kakaranish/ServiceBusVoyager-app#readme" class="btn btn-secondary">Read Documentation</a>
             </div>
         </div>
     </section>
@@ -434,8 +421,8 @@
         <div class="container">
             <p>Copyright © 2025 Gruz-Soft. Source-available under custom license.</p>
             <p>
-                <a href="https://github.com/Kakaranish/ServiceBusVoyagerElectron">GitHub</a> • 
-                <a href="https://github.com/Kakaranish/ServiceBusVoyagerElectron/issues">Report Issues</a> • 
+                <a href="https://github.com/Kakaranish/ServiceBusVoyager-app">GitHub</a> • 
+                <a href="https://github.com/Kakaranish/ServiceBusVoyager-app/issues">Report Issues</a> • 
                 <a href="mailto:stasiekgruz@gmail.com">Contact</a>
             </p>
         </div>
