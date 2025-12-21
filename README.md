@@ -6,7 +6,7 @@
 
 A lightweight, intuitive desktop application for exploring and managing Azure Service Bus. It provides a modern, responsive interface for developers working with Azure Service Bus queues, topics, and messages.
 
-![Service Bus Voyager](./docs/service-bus-voyager.jpg)
+![Service Bus Voyager](./docs/service-bus-voyager.png)
 
 ## ✨ Key Features
 
