@@ -1,5 +1,7 @@
 # Service Bus Voyager 
 
+![Status: Beta](https://img.shields.io/badge/status-beta-f9f7f4?labelColor=edebe9&style=flat)
+
 <p align="center">
   <img src="./docs/app-logo.svg" alt="Service Bus Voyager Logo" width="100">
 </p>
@@ -11,7 +13,7 @@ A lightweight, intuitive desktop application for exploring and managing Azure Se
 ## ✨ Key Features
 
 - **🎉 100% FREE FOREVER for individual developers and small companies!** — No hidden costs, no subscriptions, no paywalls. Always accessible to the developer community.
-- **💻 Cross-platform** — Available for Windows, macOS, and Linux
+- **💻 Cross-platform** — Available for Windows and macOS (Linux build coming soon)
 - **🎨 Modern UI** — Built with React and Mantine UI for a sleek, user-friendly experience
 - **📨 Message Management** — Browse, view, delete, and purge messages with JSON/text preview support
 - **🚀 Send Messages** — Create, import and send messages with custom properties and body content
