@@ -13,15 +13,16 @@ A lightweight, intuitive desktop application for exploring and managing Azure Se
 ## ✨ Key Features
 
 - **🎉 100% FREE FOREVER for individual developers and small companies!** — No hidden costs, no subscriptions, no paywalls. Always accessible to the developer community.
-- **💻 Cross-platform** — Available for Windows and macOS (Linux build coming soon)
+- **💻 Cross-platform** — Available for Windows, macOS, and Linux
 - **🎨 Modern UI** — Built with React and Mantine UI for a sleek, user-friendly experience
+- **🔐 Multiple Authentication Options** — Connection string, Entra ID (Interactive Browser), Entra ID (Device Code Flow)
+- **📚 Multi-namespace Support** — Connect to multiple Service Bus namespaces simultaneously
+- **🧰 Infrastructure Management** — Create, update, and delete queues, topics, and subscriptions
 - **📨 Message Management** — Browse, view, delete, and purge messages with JSON/text preview support
 - **🚀 Send Messages** — Create, import and send messages with custom properties and body content
 - **🔍 Filter & Search** — Advanced filtering and searching capabilities for messages
 - **♻️ Resubmission** — Resend messages to the same or different queues/topics
-- **📚 Multi-namespace Support** — Connect to multiple Service Bus namespaces simultaneously
 - **📊 Entity Overview** — Monitor queues and topics with real-time message counts and runtime properties
-- **🔒 Secure Connections** — Encrypted credential storage using OS keychain integration
 
 ## 💾 Download
 
