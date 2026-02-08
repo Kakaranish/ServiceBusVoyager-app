@@ -109,23 +109,6 @@
             padding: 0;
         }
 
-        /* Download section */
-        .download-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            padding: 50px 40px;
-            border-radius: 12px;
-            text-align: center;
-            margin-bottom: 60px;
-            color: white;
-            box-shadow: 0 12px 40px var(--shadow);
-        }
-
-        .download-section h2 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            font-weight: 700;
-        }
-
         .btn {
             display: inline-block;
             padding: 16px 45px;
@@ -144,6 +127,12 @@
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-header {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            padding: 18px 50px;
         }
 
         /* Warning box */
@@ -384,16 +373,12 @@
             <img src="./app-logo.svg" alt="Service Bus Voyager Logo">
             <h1>Download & Installation</h1>
             <p>Get Service Bus Voyager for your platform and learn how to resolve installation warnings</p>
+            <a href="https://github.com/Kakaranish/ServiceBusVoyager-app/releases" class="btn btn-header">📥 Download on GitHub Releases</a>
         </div>
     </header>
 
     <main>
         <div class="container">
-            <div class="download-section">
-                <h2>📥 Download Latest Release</h2>
-                <a href="https://github.com/Kakaranish/ServiceBusVoyager-app/releases" class="btn">Go to GitHub Releases</a>
-            </div>
-
             <div class="warning-box">
                 <h3>⚠️ Installation Warnings (Beta Version)</h3>
                 <p>This version of the application is in <strong>beta phase</strong> and does not have developer certificates (Apple Developer ID and Microsoft code signing). This causes Gatekeeper/SmartScreen warnings. <strong>This is normal for early indie/startup releases</strong> — the application is safe and developed by <strong>Gruz-Soft</strong>, a developer from Poland.</p>
