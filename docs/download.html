@@ -97,6 +97,7 @@
             opacity: 0.95;
             max-width: 700px;
             margin: 0 auto;
+            font-weight: 500;
         }
 
         /* Main content */
@@ -115,18 +116,19 @@
             font-size: 1.1rem;
             font-weight: 700;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
             background: white;
             color: var(--primary);
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             cursor: pointer;
             border: 2px solid transparent;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(222, 174, 86, 0.3);
+            background: var(--bg-alt);
         }
 
         .btn-header {
@@ -137,29 +139,52 @@
 
         /* Warning box */
         .warning-box {
-            background: #fffbeb;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
             border: 2px solid #fcd34d;
             border-radius: 12px;
             padding: 40px;
             margin-bottom: 50px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .warning-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(253, 224, 71, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         .warning-box h3 {
             color: #b45309;
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+            font-size: 1.7rem;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             font-weight: 700;
+            position: relative;
+            z-index: 1;
         }
 
         .warning-box p {
             color: #92400e;
-            font-size: 1.05rem;
-            line-height: 1.8;
+            font-size: 1.1rem;
+            line-height: 1.9;
             margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
         }
 
         .warning-box strong {
@@ -170,27 +195,41 @@
         /* OS sections */
         .os-section {
             background: var(--bg-alt);
-            border: 1px solid var(--border);
+            border: 2px solid var(--border);
             border-radius: 12px;
             padding: 40px;
             margin-bottom: 35px;
             box-shadow: 0 4px 16px var(--shadow-dark);
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .os-section:hover {
-            box-shadow: 0 8px 24px var(--shadow-dark);
-            border-color: var(--primary-light);
+            box-shadow: 0 12px 40px var(--shadow);
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .os-section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--primary));
+            border-radius: 12px 12px 0 0;
         }
 
         .os-section h4 {
             color: var(--primary);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 25px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             font-weight: 700;
+            margin-top: 10px;
         }
 
         .os-section p {
@@ -198,6 +237,18 @@
             line-height: 1.8;
             color: var(--text);
             font-size: 1.05rem;
+        }
+
+        .os-section a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .os-section a:hover {
+            color: var(--primary-dark);
         }
 
         .os-section code {
@@ -276,10 +327,13 @@
             margin-bottom: 15px;
             line-height: 1.8;
             font-size: 1.05rem;
+            padding-left: 10px;
+            border-left: 3px solid var(--primary-light);
+            padding-left: 20px;
         }
 
         .steps li strong {
-            color: var(--text);
+            color: var(--primary-dark);
             font-weight: 700;
         }
 
@@ -372,17 +426,17 @@
         <div class="container">
             <img src="./app-logo.svg" alt="Service Bus Voyager Logo">
             <h1>Download & Installation</h1>
-            <p>Get Service Bus Voyager for your platform and learn how to resolve installation warnings</p>
-            <a href="https://github.com/Kakaranish/ServiceBusVoyager-app/releases" class="btn btn-header">📥 Download on GitHub Releases</a>
+            <p>Get Service Bus Voyager for your platform and learn how to resolve well-known installation warnings</p>
+            <a href="https://github.com/Kakaranish/ServiceBusVoyager-app/releases" class="btn btn-header">Download on GitHub Releases</a>
         </div>
     </header>
 
     <main>
         <div class="container">
             <div class="warning-box">
-                <h3>⚠️ Installation Warnings (Beta Version)</h3>
-                <p>This version of the application is in <strong>beta phase</strong> and does not have developer certificates (Apple Developer ID and Microsoft code signing). This causes Gatekeeper/SmartScreen warnings. <strong>This is normal for early indie/startup releases</strong> — the application is safe and developed by <strong>Gruz-Soft</strong>, a developer from Poland.</p>
-                <p style="margin-top: 20px;">Certification is planned for future stable versions after collecting feedback. <strong>Download only from the official GitHub releases page!</strong></p>
+                <h3>🚀 Beta Version Notice</h3>
+                <p>This beta lacks <strong>Apple Developer ID</strong> and <strong>Microsoft code signing certificates</strong>, causing <strong>Gatekeeper</strong> (macOS) and <strong>SmartScreen</strong> (Windows) warnings during installation.</p>
+                <p style="margin-top: 20px;">These warnings <strong>completely disappear</strong> when Service Bus Voyager exits beta and enters stable release with full developer certification.</p>
             </div>
 
             <div class="os-section">
@@ -395,17 +449,7 @@
                 </div>
 
                 <div class="steps">
-                    <p><strong>Solution 1: Using System Settings (Recommended)</strong></p>
-                    <ol>
-                        <li>Click <strong>Cancel</strong> in the warning dialog</li>
-                        <li>Open <strong>System Settings</strong> → <strong>Privacy & Security</strong></li>
-                        <li>Scroll down to find the message about Service Bus Voyager</li>
-                        <li>Click <strong>Open Anyway</strong></li>
-                        <li>Confirm by clicking <strong>Open</strong> in the next dialog</li>
-                    </ol>
-
-                    <p style="margin-top: 25px;"><strong>Solution 2: Using Terminal</strong></p>
-                    <p>Alternatively, remove the quarantine attribute using Terminal:</p>
+                    <p>Remove the quarantine attribute using Terminal:</p>
                     <pre><code>xattr -d com.apple.quarantine '/Applications/Service Bus Voyager.app'</code></pre>
                     <p>After running this command, the app will open without warnings on subsequent launches.</p>
                 </div>
@@ -422,25 +466,18 @@
                         <li>Click <strong>Run anyway</strong> button that appears at the bottom</li>
                         <li>The application will install and run normally</li>
                     </ol>
-
-                    <p style="margin-top: 25px;">This warning appears because the application doesn't yet have a Microsoft code signing certificate. The app is completely safe to use. The warning is a security feature to protect users from potentially harmful software, but Service Bus Voyager is a legitimate development tool.</p>
                 </div>
-            </div>
-
-            <div class="os-section">
-                <h4>🐧 Linux Installation</h4>
-                <p>Linux builds are coming soon! We're working on bringing Service Bus Voyager to Linux. Stay tuned for updates on our <a href="https://github.com/Kakaranish/ServiceBusVoyager-app" style="color: var(--primary); font-weight: 600;">GitHub repository</a>.</p>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>Having issues with installation?</p>
+            <p>Copyright © 2026 Gruz-Soft.</p>
             <p>
-                <a href="https://github.com/Kakaranish/ServiceBusVoyager-app/issues">Report Issue on GitHub</a> • 
-                <a href="mailto:stasiekgruz@gmail.com">Contact Support</a> • 
-                <a href="./index.html">Back to Home</a>
+                <a href="https://github.com/Kakaranish/ServiceBusVoyager-app">GitHub</a> •  
+                <a href="https://github.com/Kakaranish/ServiceBusVoyager-app/issues">Report Issues</a> • 
+                <a href="mailto:stasiekgruz@gmail.com">Contact</a>
             </p>
         </div>
     </footer>
