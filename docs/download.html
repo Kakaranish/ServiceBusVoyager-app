@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download - Service Bus Voyager</title>
+    <title>Download & Installation - Service Bus Voyager</title>
     <link rel="icon" type="image/svg+xml" href="./app-logo.svg">
     <style>
         * {
@@ -15,11 +15,14 @@
         :root {
             --primary: #DEAE56;
             --primary-dark: #c99940;
+            --primary-light: #f0d084;
             --text: #323130;
             --text-light: #605e5c;
             --bg: #ffffff;
             --bg-alt: #f9f7f4;
             --border: #edebe9;
+            --shadow: rgba(222, 174, 86, 0.2);
+            --shadow-dark: rgba(0, 0, 0, 0.1);
         }
 
         body {
@@ -27,272 +30,434 @@
             line-height: 1.6;
             color: var(--text);
             background: var(--bg);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0 20px;
+            width: 100%;
         }
 
+        /* Navigation */
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Header */
         header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 80px 20px;
             text-align: center;
-            margin-bottom: 60px;
+        }
+
+        header .container {
+            padding: 0 20px;
         }
 
         header img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 20px;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
         }
 
         header h1 {
-            font-size: 2.5rem;
-            color: var(--text);
-            margin-bottom: 10px;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
         }
 
         header p {
-            font-size: 1.1rem;
-            color: var(--text-light);
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
+        /* Main content */
+        main {
+            flex: 1;
+            padding: 60px 20px;
+        }
+
+        main .container {
+            padding: 0;
+        }
+
+        /* Download section */
         .download-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            padding: 40px;
+            padding: 50px 40px;
             border-radius: 12px;
             text-align: center;
             margin-bottom: 60px;
             color: white;
+            box-shadow: 0 12px 40px var(--shadow);
         }
 
         .download-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            font-weight: 700;
         }
 
         .btn {
             display: inline-block;
-            padding: 16px 40px;
-            font-size: 1.2rem;
-            font-weight: 600;
+            padding: 16px 45px;
+            font-size: 1.1rem;
+            font-weight: 700;
             text-decoration: none;
             border-radius: 6px;
             background: white;
             color: var(--primary);
             transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
+        /* Warning box */
         .warning-box {
-            background: #fff3cd;
-            border: 2px solid #ffecb5;
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 40px;
+            background: #fffbeb;
+            border: 2px solid #fcd34d;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
         }
 
         .warning-box h3 {
-            color: #856404;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            color: #b45309;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-weight: 700;
         }
 
         .warning-box p {
-            color: #856404;
-            font-size: 1rem;
+            color: #92400e;
+            font-size: 1.05rem;
             line-height: 1.8;
             margin-bottom: 15px;
         }
 
+        .warning-box strong {
+            color: #7c2d12;
+            font-weight: 700;
+        }
+
+        /* OS sections */
         .os-section {
             background: var(--bg-alt);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 30px;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 16px var(--shadow-dark);
+            transition: all 0.3s ease;
+        }
+
+        .os-section:hover {
+            box-shadow: 0 8px 24px var(--shadow-dark);
+            border-color: var(--primary-light);
         }
 
         .os-section h4 {
             color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-weight: 700;
         }
 
         .os-section p {
             margin-bottom: 15px;
-            line-height: 1.7;
+            line-height: 1.8;
+            color: var(--text);
+            font-size: 1.05rem;
         }
 
         .os-section code {
             background: #f5f5f5;
-            padding: 2px 8px;
+            padding: 3px 10px;
             border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.95rem;
+            color: #c7254e;
+            font-weight: 600;
         }
 
         .os-section pre {
             background: #2d2d2d;
             color: #f8f8f2;
-            padding: 15px;
-            border-radius: 6px;
+            padding: 20px;
+            border-radius: 8px;
             overflow-x: auto;
-            margin: 15px 0;
+            margin: 20px 0;
+            border: 1px solid #3e3d32;
+            line-height: 1.5;
+            font-size: 0.95rem;
         }
 
         .os-section pre code {
             background: none;
             padding: 0;
             color: #f8f8f2;
+            font-weight: normal;
         }
 
         .screenshot {
-            margin: 20px 0;
+            margin: 30px 0;
             text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
         }
 
         .screenshot img {
             max-width: 100%;
-            border-radius: 8px;
+            max-height: 400px;
+            border-radius: 6px;
             border: 1px solid var(--border);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px var(--shadow-dark);
         }
 
         .screenshot p {
-            margin-top: 10px;
-            font-size: 0.9rem;
+            margin-top: 15px;
+            font-size: 0.95rem;
             color: var(--text-light);
             font-style: italic;
         }
 
         .steps {
-            margin: 20px 0;
+            margin: 25px 0;
+        }
+
+        .steps p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .steps p strong {
+            color: var(--primary);
+            font-weight: 700;
         }
 
         .steps ol {
-            margin-left: 20px;
+            margin-left: 30px;
         }
 
         .steps li {
-            margin-bottom: 10px;
-            line-height: 1.7;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            font-size: 1.05rem;
         }
 
+        .steps li strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        /* Footer */
         footer {
+            background: var(--text);
+            color: white;
             text-align: center;
+            padding: 40px 20px;
             margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid var(--border);
         }
 
         footer a {
-            color: var(--primary);
+            color: var(--primary-light);
             text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
 
         footer a:hover {
+            color: white;
             text-decoration: underline;
         }
 
+        footer p:first-child {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        footer p:last-child {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
+            header {
+                padding: 50px 20px;
+            }
+
             header h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            header img {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 20px;
+            }
+
+            main {
+                padding: 40px 20px;
             }
 
             .download-section {
                 padding: 30px 20px;
             }
 
+            .download-section h2 {
+                font-size: 1.6rem;
+            }
+
             .warning-box,
             .os-section {
-                padding: 20px;
+                padding: 25px 20px;
+            }
+
+            .os-section h4 {
+                font-size: 1.3rem;
+            }
+
+            .screenshot img {
+                max-height: 300px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <nav>
+        <div class="container">
+            <a href="./index.html">← Back to Home</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
             <img src="./app-logo.svg" alt="Service Bus Voyager Logo">
-            <h1>Download Service Bus Voyager</h1>
-            <p>Get the latest version for your operating system</p>
-        </header>
-
-        <div class="download-section">
-            <h2>📥 Download Latest Release</h2>
-            <a href="https://github.com/Kakaranish/ServiceBusVoyager-app/releases" class="btn">Go to GitHub Releases</a>
+            <h1>Download & Installation</h1>
+            <p>Get Service Bus Voyager for your platform and learn how to resolve installation warnings</p>
         </div>
+    </header>
 
-        <div class="warning-box">
-            <h3>⚠️ Installation Warnings (Beta Version)</h3>
-            <p>This version of the application is in <strong>beta phase</strong> and does not have developer certificates (Apple Developer ID and Microsoft code signing). This causes Gatekeeper/SmartScreen warnings. <strong>This is normal for early indie/startup releases</strong> — the application is safe and developed by Gruz-Soft, a developer from Poland.</p>
-            <p>Certification is planned for future stable versions after collecting feedback. <strong>Download only from the official website!</strong></p>
-        </div>
-
-        <div class="os-section">
-            <h4>🍎 macOS Installation</h4>
-            <p>When you first open Service Bus Voyager on macOS, you may see a warning that the app "cannot be opened because it is from an unidentified developer."</p>
-            
-            <div class="screenshot">
-                <img src="./installation/mac/damaged-and-cannot-be-open.png" alt="macOS Gatekeeper warning">
-                <p>Example of macOS Gatekeeper warning</p>
+    <main>
+        <div class="container">
+            <div class="download-section">
+                <h2>📥 Download Latest Release</h2>
+                <a href="https://github.com/Kakaranish/ServiceBusVoyager-app/releases" class="btn">Go to GitHub Releases</a>
             </div>
 
-            <div class="steps">
-                <p><strong>Solution 1: Using System Settings</strong></p>
-                <ol>
-                    <li>Click <strong>Cancel</strong> in the warning dialog</li>
-                    <li>Open <strong>System Settings</strong> → <strong>Privacy & Security</strong></li>
-                    <li>Scroll down to find the message about Service Bus Voyager</li>
-                    <li>Click <strong>Open Anyway</strong></li>
-                    <li>Confirm by clicking <strong>Open</strong> in the next dialog</li>
-                </ol>
+            <div class="warning-box">
+                <h3>⚠️ Installation Warnings (Beta Version)</h3>
+                <p>This version of the application is in <strong>beta phase</strong> and does not have developer certificates (Apple Developer ID and Microsoft code signing). This causes Gatekeeper/SmartScreen warnings. <strong>This is normal for early indie/startup releases</strong> — the application is safe and developed by <strong>Gruz-Soft</strong>, a developer from Poland.</p>
+                <p style="margin-top: 20px;">Certification is planned for future stable versions after collecting feedback. <strong>Download only from the official GitHub releases page!</strong></p>
+            </div>
 
-                <p><strong>Solution 2: Using Terminal</strong></p>
-                <p>Alternatively, remove the quarantine attribute using Terminal:</p>
-                <pre><code>xattr -d com.apple.quarantine '/Applications/Service Bus Voyager.app'</code></pre>
-                <p>After running this command, the app will open without warnings.</p>
+            <div class="os-section">
+                <h4>🍎 macOS Installation</h4>
+                <p>When you first open Service Bus Voyager on macOS, you may see a warning that the app "cannot be opened because it is from an unidentified developer."</p>
+                
+                <div class="screenshot">
+                    <img src="./installation/mac/damaged-and-cannot-be-open.png" alt="macOS Gatekeeper warning">
+                    <p>Example of macOS Gatekeeper warning</p>
+                </div>
+
+                <div class="steps">
+                    <p><strong>Solution 1: Using System Settings (Recommended)</strong></p>
+                    <ol>
+                        <li>Click <strong>Cancel</strong> in the warning dialog</li>
+                        <li>Open <strong>System Settings</strong> → <strong>Privacy & Security</strong></li>
+                        <li>Scroll down to find the message about Service Bus Voyager</li>
+                        <li>Click <strong>Open Anyway</strong></li>
+                        <li>Confirm by clicking <strong>Open</strong> in the next dialog</li>
+                    </ol>
+
+                    <p style="margin-top: 25px;"><strong>Solution 2: Using Terminal</strong></p>
+                    <p>Alternatively, remove the quarantine attribute using Terminal:</p>
+                    <pre><code>xattr -d com.apple.quarantine '/Applications/Service Bus Voyager.app'</code></pre>
+                    <p>After running this command, the app will open without warnings on subsequent launches.</p>
+                </div>
+            </div>
+
+            <div class="os-section">
+                <h4>🪟 Windows Installation</h4>
+                <p>When installing on Windows, you may see a <strong>Microsoft Defender SmartScreen</strong> warning stating "Windows protected your PC."</p>
+                
+                <div class="steps">
+                    <p><strong>How to Bypass SmartScreen:</strong></p>
+                    <ol>
+                        <li>Click <strong>More info</strong> in the SmartScreen dialog</li>
+                        <li>Click <strong>Run anyway</strong> button that appears at the bottom</li>
+                        <li>The application will install and run normally</li>
+                    </ol>
+
+                    <p style="margin-top: 25px;">This warning appears because the application doesn't yet have a Microsoft code signing certificate. The app is completely safe to use. The warning is a security feature to protect users from potentially harmful software, but Service Bus Voyager is a legitimate development tool.</p>
+                </div>
+            </div>
+
+            <div class="os-section">
+                <h4>🐧 Linux Installation</h4>
+                <p>Linux builds are coming soon! We're working on bringing Service Bus Voyager to Linux. Stay tuned for updates on our <a href="https://github.com/Kakaranish/ServiceBusVoyager-app" style="color: var(--primary); font-weight: 600;">GitHub repository</a>.</p>
             </div>
         </div>
+    </main>
 
-        <div class="os-section">
-            <h4>🪟 Windows Installation</h4>
-            <p>When installing on Windows, you may see a <strong>Microsoft Defender SmartScreen</strong> warning stating "Windows protected your PC."</p>
-            
-            <div class="steps">
-                <p><strong>How to proceed:</strong></p>
-                <ol>
-                    <li>Click <strong>More info</strong> in the SmartScreen dialog</li>
-                    <li>Click <strong>Run anyway</strong> button that appears</li>
-                    <li>The application will install normally</li>
-                </ol>
-
-                <p>This warning appears because the application doesn't yet have a Microsoft code signing certificate. The app is completely safe to use.</p>
-            </div>
-        </div>
-
-        <div class="os-section">
-            <h4>🐧 Linux Installation</h4>
-            <p>Linux builds are coming soon! Stay tuned for updates.</p>
-        </div>
-
-        <footer>
-            <p><a href="./index.html">← Back to Home</a></p>
-            <p style="margin-top: 10px; color: var(--text-light);">
-                Having issues? <a href="https://github.com/Kakaranish/ServiceBusVoyager-app/issues">Report on GitHub</a>
+    <footer>
+        <div class="container">
+            <p>Having issues with installation?</p>
+            <p>
+                <a href="https://github.com/Kakaranish/ServiceBusVoyager-app/issues">Report Issue on GitHub</a> • 
+                <a href="mailto:stasiekgruz@gmail.com">Contact Support</a> • 
+                <a href="./index.html">Back to Home</a>
             </p>
-        </footer>
-    </div>
+        </div>
+    </footer>
 </body>
 </html>
